@@ -61,10 +61,13 @@ local function load( modApi, options )
 
                 local x, y = self._widget.binder.meters:getPosition()
                 self._widget.binder.meters:setPosition(-42, y)
-            else
-                local x, y = self._widget.binder.brain:getPosition()
-                self._widget.binder.brain:setPosition(2, y)
+            elseif self._widget.binder.armor:isVisible() then
+                local x, y = self._widget.binder.armor:getPosition()
+                self._widget.binder.armor:setPosition(-20, y)
 
+                local x, y = self._widget.binder.meters:getPosition()
+                self._widget.binder.meters:setPosition(-42, y)
+            else
                 local x, y = self._widget.binder.meters:getPosition()
                 self._widget.binder.meters:setPosition(-62, y)
             end
