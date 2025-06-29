@@ -5,6 +5,7 @@ local function init( modApi )
 end
 
 local function load( modApi, options )
+    local cdefs = include( "client_defs" )
     local flagui = include("hud/flag_ui")
 
     refreshFlagOld = refreshFlagOld or flagui.refreshFlag
